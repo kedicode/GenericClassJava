@@ -19,6 +19,7 @@ classDiagram
     String render()
     }
     class Line {
+        <<abstract>>
         -int length
         -Location location
         -List~Location~ locations
@@ -37,6 +38,7 @@ classDiagram
     Line "1"--o"*" Location: Contains
     
     class Point {
+        <<abstract>>
         -int sqrMiles
         -Location location
         +String render()
