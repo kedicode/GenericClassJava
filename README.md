@@ -1,8 +1,9 @@
 * A small project to mess around with Java generics.
+  * Simply outputs a rendered string of a Mappable interface implementation
 * Also a change to play around with mermaid.js
 ```mermaid
 ---
-title: Animal example
+title: Mappable Layer Render
 ---
 classDiagram
     direction RL
