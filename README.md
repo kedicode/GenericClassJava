@@ -1,10 +1,17 @@
 * A small project to mess around with Java generics.
-
+* Also a change to play around with mermaid.js
 ```mermaid
 ---
 title: Animal example
 ---
 classDiagram
+    direction RL
+    class Layer~T extends Mappable~{
+    -List~T~ elements;
+    +Layer(List~T~: elements)
+    +renderLayer()
+    }
+    Layer <|-- Mappable : extends
     class Mappable {
     <<interface>>
     String TEMPLATE
@@ -24,7 +31,7 @@ classDiagram
         +String render()
     }
     River --* WaterUsage :Composition
-    River --|> Line :Extends
+    Line --|> River :Extends
     Mappable <|-- Line: implements
     Line "1"--o"*" Location: Contains
     
@@ -40,7 +47,7 @@ classDiagram
         -Location location
         +String render()
     }
-    NationalPark --|> Point:Extends
+    Point --|> NationalPark:Extends
     
     Mappable <| -- Point :implements
     Point "1"--o"1"Location : Contains
@@ -60,12 +67,4 @@ classDiagram
         CRUISING
         FISHING
     }
-    
-    class Layer~T extends Mappable~{
-        -List~T~ elements;
-        +Layer(List~T~: elements)
-        +renderLayer()
-    }
-    
-    
 ```
